@@ -9,7 +9,7 @@ const games = await getCollection('games');
   <div>
     <ul>
       {games.map(game => {
-        return <li><a href={`/games/${game.id}`}>{game.data.title}</a></li>
+        return <li class="text-white"><a href={`/games/${game.id}`}>{game.data.title}</a></li>
       })}
     </ul>
   </div>
