@@ -1,17 +1,19 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
-const { slug } = Astro.params;
-if (!slug) throw new Error('Slug not found');
-const game = await getEntry('games', slug);
-
-if (!game) throw new Error('No post found for this slug');
-export async function getStaticPaths() {
-  const games = await getCollection('games');
-  return games.map(game => ({ params: { slug: game.id } }));
-}
 import Layout from "../../layouts/Layout.astro"
 import { Image } from 'astro:assets';
 import Lista from '../../components/Lista.astro';
+const { slug } = Astro.params;
+export async function getStaticPaths() {
+  const games = await getCollection('games');
+  return games.map(game => {
+    return {
+      params: {slug: game.id},
+      props: {game}
+    }
+  });
+}
+const {game} = Astro.props
 var trailer: string
 if(game.data.trailer) {
   trailer = game.data.trailer
