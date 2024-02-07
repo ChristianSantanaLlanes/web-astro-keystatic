@@ -1,0 +1,26 @@
+---
+import { getEntry } from "astro:content"
+
+interface Props {
+    lista: [],
+    description: string
+}
+
+const {lista, description} = Astro.props
+var new_lista
+if(lista) {
+    new_lista = lista
+} else {
+    new_lista = []
+}
+---
+
+<div>
+    <h3 class="text-2xl pl-2">{description}</h3>
+    <ul class="flex flex-row gap-3 py-2">
+        {new_lista.map((async (item: { collection: any; id: any }) =>{
+          const caracteristica = await getEntry(item.collection, item.id)
+          return <li class="px-4 bg-slate-500 rounded-full">{caracteristica.data.title}</li>
+        }))}
+    </ul>
+</div>

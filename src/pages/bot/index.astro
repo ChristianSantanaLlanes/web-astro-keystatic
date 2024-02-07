@@ -1,0 +1,19 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../../layouts/Layout.astro'
+import { getCollection } from 'astro:content';
+const games = await getCollection('games')
+---
+
+<Layout title='Todos los Juegos'>
+    <section class="p-5 grid grid-cols-2 gap-3 place-items-center">
+        {games.map(game => {
+            return (
+                <a href={`/bot/${game.id}/`} class=" bg-slate-700 p-2 rounded-md">
+                    <Image src={game.data.poster} alt={game.data.title} height={500} width={500} transition:name={game.id} />
+                    <h3 class="p-1 text-center">{game.data.title}</h3>
+                </a>
+            )
+        })}
+    </section>
+</Layout>

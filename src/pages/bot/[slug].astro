@@ -1,0 +1,40 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+const { slug } = Astro.params;
+if (!slug) throw new Error('Slug not found');
+const game = await getEntry('games', slug);
+
+if (!game) throw new Error('No post found for this slug');
+export async function getStaticPaths() {
+  const games = await getCollection('games');
+  return games.map(game => ({ params: { slug: game.id } }));
+}
+import Layout from "../../layouts/Layout.astro"
+import { Image } from 'astro:assets';
+import Lista from '../../components/Lista.astro';
+var trailer: string
+if(game.data.trailer) {
+  trailer = game.data.trailer
+} else {
+  trailer = ''
+}
+---
+
+<Layout title={game.data.title}>
+  <a href="/bot" class=" bg-slate-500 rounded-full px-4 py-2 mt-4">Volver</a>
+  <Image class={`mt-4`} src={game.data.poster} alt={game.data.title} height={5000} width={5000} transition:name={game.id}/>
+  <div class="p-4">
+    <h1 class="text-2xl text-center">
+      {game.data.title}
+    </h1>
+    <p>
+      {game.data.description}
+    </p>
+    <a href={trailer}>Ver el Trailer</a>
+    <Lista lista={game.data.caracteristicas} description='Caracteristicas'/>
+    <Lista lista={game.data.companias}description='Companias'/>
+    <Lista lista={game.data.generos} description='Generos'/>
+    <Lista lista={game.data.plataformas} description='Plataformas'/>
+    <Lista lista={game.data.vistas} description='Vistas'/>
+  </div>
+</Layout>
