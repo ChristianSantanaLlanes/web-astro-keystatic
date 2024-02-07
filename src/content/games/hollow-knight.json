@@ -1,0 +1,27 @@
+{
+  "title": "Hollow Knight",
+  "poster": "https://upload.wikimedia.org/wikipedia/en/0/04/Hollow_Knight_first_cover_art.webp",
+  "trailer": "https://youtu.be/UAO2urG23S4?si=kJUIs7E686mabx7b",
+  "description": "¡Forja tu propio camino en Hollow Knight! Una aventura de acción épica a través de un vasto reino en ruinas de insectos y héroes. Explora cavernas retorcidas, lucha contra criaturas manchadas y hazte amigo de bichos extraños, todo en un estilo 2D clásico dibujado a mano.",
+  "caracteristicas": [
+    "multijugador",
+    "un-jugador",
+    "construccion",
+    "cooperativo",
+    "exploracion",
+    "sandbox"
+  ],
+  "plataformas": [
+    "pc"
+  ],
+  "generos": [
+    "accion",
+    "aventura"
+  ],
+  "vistas": [
+    "plataforma"
+  ],
+  "companias": [
+    "ubisoft"
+  ]
+}
