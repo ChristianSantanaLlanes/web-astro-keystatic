@@ -17,7 +17,7 @@ if(lista) {
 
 <div>
     <h3 class="text-2xl pl-2">{description}</h3>
-    <ul class="flex flex-row gap-3 py-2">
+    <ul class="flex flex-row gap-3 py-2 flex-wrap">
         {new_lista.map((async (item: { collection: any; id: any }) =>{
           const caracteristica = await getEntry(item.collection, item.id)
           return <li class="px-4 bg-slate-500 rounded-full">{caracteristica.data.title}</li>
