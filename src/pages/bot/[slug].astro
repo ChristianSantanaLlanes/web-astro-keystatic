@@ -32,6 +32,18 @@ if(game.data.trailer) {
     <p class="text-white">
       {game.data.description}
     </p>
+    <div>
+      <h3 class="text-white text-2xl">Requisitos Minimos</h3>
+      <p class="text-white">
+        {game.data.rec_min}
+      </p>
+    </div>
+    <div>
+      <h3 class="text-white text-2xl">Requisitos Recomendados</h3>
+      <p class="text-white">
+        {game.data.rec_rec}
+      </p>
+    </div>
     <a href={trailer}>Ver el Trailer</a>
     <Lista lista={game.data.caracteristicas} description='Caracteristicas'/>
     <Lista lista={game.data.companias}description='Companias'/>
