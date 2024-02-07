@@ -8,6 +8,8 @@ const games = defineCollection({
     poster: z.string().optional(),
     trailer: z.string().optional(),
     description: z.string().optional(),
+    rec_min: z.string().optional(),
+    rec_rec: z.string().optional(),
     caracteristicas: z.array(reference('caracteristicas')).optional(),
     plataformas: z.array(reference('plataformas')).optional(),
     generos: z.array(reference('generos')).optional(),

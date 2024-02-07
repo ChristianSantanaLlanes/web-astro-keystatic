@@ -139,31 +139,75 @@ declare module 'astro:content' {
 
 	type DataEntryMap = {
 		"caracteristicas": {
-"loco": {
-	id: "loco";
+"construccion": {
+	id: "construccion";
+  collection: "caracteristicas";
+  data: InferEntrySchema<"caracteristicas">
+};
+"cooperativo": {
+	id: "cooperativo";
+  collection: "caracteristicas";
+  data: InferEntrySchema<"caracteristicas">
+};
+"exploracion": {
+	id: "exploracion";
+  collection: "caracteristicas";
+  data: InferEntrySchema<"caracteristicas">
+};
+"multijugador": {
+	id: "multijugador";
+  collection: "caracteristicas";
+  data: InferEntrySchema<"caracteristicas">
+};
+"sandbox": {
+	id: "sandbox";
+  collection: "caracteristicas";
+  data: InferEntrySchema<"caracteristicas">
+};
+"un-jugador": {
+	id: "un-jugador";
   collection: "caracteristicas";
   data: InferEntrySchema<"caracteristicas">
 };
 };
+"companias": {
+"ubisoft": {
+	id: "ubisoft";
+  collection: "companias";
+  data: InferEntrySchema<"companias">
+};
+};
 "games": {
-"prueba-1": {
-	id: "prueba-1";
+"hollow-knight": {
+	id: "hollow-knight";
   collection: "games";
   data: InferEntrySchema<"games">
 };
 };
 "generos": {
-"prueba": {
-	id: "prueba";
+"accion": {
+	id: "accion";
+  collection: "generos";
+  data: InferEntrySchema<"generos">
+};
+"aventura": {
+	id: "aventura";
   collection: "generos";
   data: InferEntrySchema<"generos">
 };
 };
 "plataformas": {
-"prueba": {
-	id: "prueba";
+"pc": {
+	id: "pc";
   collection: "plataformas";
   data: InferEntrySchema<"plataformas">
+};
+};
+"vistas": {
+"plataforma": {
+	id: "plataforma";
+  collection: "vistas";
+  data: InferEntrySchema<"vistas">
 };
 };
 

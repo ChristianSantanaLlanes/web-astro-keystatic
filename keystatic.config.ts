@@ -68,6 +68,8 @@ export default config({
         poster: fields.url({label:'Url del Poster'}),
         trailer: fields.url({label:'Url del trailer'}),
         description: fields.text({label:'Descripcion', multiline:true}),
+        rec_min: fields.text({label:'Requisitos Minimos', multiline:true}),
+        rec_rec: fields.text({label:'Requisitos Recomendados', multiline:true}),
         caracteristicas: fields.array(
           fields.relationship({
             label: 'Caracteristicas',
